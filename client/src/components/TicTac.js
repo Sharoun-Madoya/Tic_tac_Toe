@@ -1,21 +1,24 @@
 import React, { useState } from 'react'
 import './TicTac.css'
+import cross_icon from "../assets/X1 tictac.png"
+import circle_icon from "../assets/O1 tictac.png"
+
 
 let data = ["","","","","","","","",""]
 const TicTac= () =>{
     let [count, setCount]= useState(0)
     let [Lock, setLock]= useState(false)
-    const toogle = () =>{
+    const toogle = (e, lock, num) =>{
         if (lock){
             return 0;
         }
         if (count%2 ===0){
-            e.target.innerHTML= `<img src='${}'>`;
+            e.target.innerHTML= `<img src='${cross_icon}'>`;
             data[num]="x";
             setCount(++count);
         }
         else{
-            e.target.innerHTML=`<img src='${}'>`;
+            e.target.innerHTML=`<img src='${circle_icon}'>`;
             data[num]= "o";
             setCount(++count);
         }
