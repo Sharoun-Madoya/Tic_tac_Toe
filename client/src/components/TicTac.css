@@ -1,0 +1,39 @@
+.container{
+
+}
+.title{
+    margin-top: 60px;
+    color: white;
+    font-size: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.board{
+    height: 600px;
+    width: 540px;
+    display: flex;
+    margin: auto;
+    margin-top: 50px;
+}
+.boxes{
+    display: flex;
+    height: 180px;
+    width: 180px;
+    background-color: ;
+    border: 4px solid #0f1b21;
+    border-radius: 12px;
+    cursor: pointer;
+}
+.btn{
+    width: 180px;
+    height: 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50px;
+    font-size: 26px;
+    color: rgb(125, 74, 9);
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
