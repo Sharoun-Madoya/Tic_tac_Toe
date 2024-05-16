@@ -22,6 +22,38 @@ const TicTac= () =>{
             data[num]= "o";
             setCount(++count);
         }
+        checkWinner()
+    }
+    
+    const checkWinner = () => {
+        if (data[0] === data[1] && data[1] === data[2] && data[0] !== "") {
+            winning(data[0]);
+        }
+        else if (data[3] === data[4] && data[4] === data[5] && data[3] !== "") {
+            winning(data[3]);
+        }
+        else if (data[6] === data[7] && data[7] === data[8] && data[6] !== "") {
+            winning(data[6]);
+        }
+        else if (data[0] === data[3] && data[3] === data[6] && data[0] !== "") {
+            winning(data[0]);
+        }
+        else if (data[1] === data[4] && data[4] === data[7] && data[1] !== "") {
+            winning(data[1]);
+        }
+        else if (data[2] === data[5] && data[5] === data[8] && data[2] !== "") {
+            winning(data[2]);
+        }
+        else if (data[0] === data[4] && data[4] === data[8] && data[0] !== "") {
+            winning(data[0]);
+        }
+        else if (data[2] === data[4] && data[4] === data[6] && data[2] !== "") {
+            winning(data[2]);
+        }
+    }
+
+    const winning = (winner) =>{
+        setLock(true);
     }
     return(
         <div className='container'>
