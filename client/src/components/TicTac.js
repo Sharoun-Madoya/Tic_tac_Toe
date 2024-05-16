@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './TicTac.css'
 import cross_icon from "../assets/X1 tictac.png"
 import circle_icon from "../assets/O1 tictac.png"
@@ -8,6 +8,7 @@ let data = ["","","","","","","","",""]
 const TicTac= () =>{
     let [count, setCount]= useState(0)
     let [lock, setLock]= useState(false)
+    let titleRef = useRef(null)
     const toogle = (e, num) =>{
         if (lock){
             return 0;
@@ -24,7 +25,7 @@ const TicTac= () =>{
         }
         checkWinner()
     }
-    
+
     const checkWinner = () => {
         if (data[0] === data[1] && data[1] === data[2] && data[0] !== "") {
             winning(data[0]);
@@ -54,10 +55,16 @@ const TicTac= () =>{
 
     const winning = (winner) =>{
         setLock(true);
+        if (winner ==="x"){
+            titleRef.current.innerHTML = `Congrats :<img src=${cross_icon}>`
+        }
+        else{
+            titleRef.current.innerHTML = `Congrats :<img src=${circle_icon}>`
+        }
     }
     return(
         <div className='container'>
-            <h1>Tic Tac Toe</h1>
+            <h1 ref={titleRef}>Tic Tac Toe</h1>
             <div className='board'>
                 <div className='row1'>
                     <div className='boxes' onClick={(e)=>{toogle(e, 0)}}></div>
