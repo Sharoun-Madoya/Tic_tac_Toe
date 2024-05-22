@@ -62,6 +62,12 @@ const TicTac= () =>{
             titleRef.current.innerHTML = `Congrats :<img src=${circle_icon}>`
         }
     }
+
+    const reset = ()=> {
+        setLock(false);
+        data = ["","","","","","","","",""];
+        titleRef.current.innerHTML = "Tic Tac Toe"
+    }
     return(
         <div className='container'>
             <h1 ref={titleRef}>Tic Tac Toe</h1>
@@ -82,7 +88,7 @@ const TicTac= () =>{
                     <div className='boxes' onClick={(e)=>{toogle(e, 8)}}></div>
                 </div>
             </div>
-            <button className='btn'>Refresh</button>
+            <button className='btn' onClick={()=> {reset()}}>Refresh</button>
         </div>
     )
 }
