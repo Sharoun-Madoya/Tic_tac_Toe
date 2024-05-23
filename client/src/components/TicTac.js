@@ -68,10 +68,10 @@ const TicTac= () =>{
     const winning = (winner) =>{
         setLock(true);
         if (winner ==="x"){
-            titleRef.current.innerHTML = `Congrats :<img src=${cross_icon}>`
+            titleRef.current.innerHTML = `Congrats :<img src='${cross_icon}'>`
         }
         else{
-            titleRef.current.innerHTML = `Congrats :<img src=${circle_icon}>`
+            titleRef.current.innerHTML = `Congrats :<img src='${circle_icon}'>`
         }
     }
 
